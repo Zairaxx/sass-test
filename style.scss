@@ -1,0 +1,48 @@
+//Variables
+
+$main-color:#00ffb9;
+$banana-color: yellow;
+$border: 1px solid green;
+
+
+// Mixin
+
+@mixin flex-center($justify) {
+    display:flex;
+    justify-content: $justify;
+    align-items:center;
+}
+
+.box {
+    height:200px;
+    background:navy;
+    color: white;
+
+    .big-box {
+        @include flex-center(space-around);
+        height:150px;
+        border:1px solid $main-color;
+        background:blue;
+        h2 {
+            color:greenyellow;
+        }
+        &:hover {
+            background:peru;
+        }
+    }
+
+    .small-box {
+        @include flex-center(space-around);
+        height:100px;
+        border:$border;
+        background: $main-color;
+        &:hover {
+            background:pink;
+        }
+    }
+
+}
+
+.big-box {
+    background:red;
+}
